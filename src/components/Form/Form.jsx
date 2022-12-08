@@ -8,6 +8,12 @@ const Form = () => {
 
   const {todos, setTodos} = useContext(Context);
 
+  const addTask = () => {
+    if (!todo) return;
+    addTodo(todo);
+    setTodo("");
+  };
+
   const addTodo = text => {
     const newTodos = [...todos, {
       id: Date.now(),
@@ -15,12 +21,6 @@ const Form = () => {
       isCompleted: false
     }];
     setTodos(newTodos);
-  };
-
-  const addTask = () => {
-    if (!todo) return;
-    addTodo(todo);
-    setTodo("");
   };
 
   return (
