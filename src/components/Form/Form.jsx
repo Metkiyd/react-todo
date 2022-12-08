@@ -1,18 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import styles from './styles.module.scss'
 import {Context} from "../../App";
-import {useContext} from "react";
 
 const Form = () => {
   const [todo, setTodo] = useState('');
-
   const {todos, setTodos} = useContext(Context);
-
-  const addTask = () => {
-    if (!todo) return;
-    addTodo(todo);
-    setTodo("");
-  };
 
   const addTodo = text => {
     const newTodos = [...todos, {
@@ -21,6 +13,12 @@ const Form = () => {
       isCompleted: false
     }];
     setTodos(newTodos);
+  };
+
+  const addTask = () => {
+    if (!todo) return;
+    addTodo(todo);
+    setTodo("");
   };
 
   return (
