@@ -1,5 +1,5 @@
 import './style.css';
-import React, {useState, createContext, useMemo, useCallback} from "react";
+import React, {useState, createContext} from "react";
 import {Form} from "./components/Form";
 import {List} from "./components/List";
 import {Result} from "./components/Result";
