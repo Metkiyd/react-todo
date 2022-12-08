@@ -5,6 +5,7 @@ import {useContext} from "react";
 
 const Form = () => {
   const [todo, setTodo] = useState('');
+
   const {todos, setTodos} = useContext(Context);
 
   const addTodo = text => {
