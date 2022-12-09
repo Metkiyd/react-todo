@@ -5,6 +5,7 @@ import {Context} from "../../App";
 const Form = () => {
   const [todo, setTodo] = useState('');
   const {todos, setTodos} = useContext(Context);
+  // fsa
 
   const addTodo = text => {
     const newTodos = [...todos, {
