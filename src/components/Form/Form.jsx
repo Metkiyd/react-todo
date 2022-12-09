@@ -5,8 +5,12 @@ import {Context} from "../../App";
 const Form = () => {
   const [todo, setTodo] = useState('');
   const {todos, setTodos} = useContext(Context);
-  // fsa
-  // 3
+
+  const addTask = () => {
+    if (!todo) return;
+    addTodo(todo);
+    setTodo("");
+  };
 
   const addTodo = text => {
     const newTodos = [...todos, {
@@ -15,12 +19,6 @@ const Form = () => {
       isCompleted: false
     }];
     setTodos(newTodos);
-  };
-
-  const addTask = () => {
-    if (!todo) return;
-    addTodo(todo);
-    setTodo("");
   };
 
   return (
