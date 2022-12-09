@@ -6,6 +6,7 @@ const Form = () => {
   const [todo, setTodo] = useState('');
   const {todos, setTodos} = useContext(Context);
   // fsa
+  // 1
 
   const addTodo = text => {
     const newTodos = [...todos, {
